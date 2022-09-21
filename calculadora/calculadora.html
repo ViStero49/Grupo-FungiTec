@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <h1>Calculadora Financeira</h1>
+
+    <p>Nome da espécie:</p><input type="text" id="input_especie">
+
+    <p>Número total de produção no mês por kg:</p><input type="number" id="input_qtd_producao_atual">
+
+    <p>Número de perdas no mês por kg:</p><input type="number" id="input_perdaMensal">
+
+    <p>Valor liquido no mês</p><input type="number" id="input_valor_liquido">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="lucroAtual">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        var especie = input_especie.value;
+
+        var totalProducao = Number(input_qtd_producao_atual.value);
+
+        var perdas = Number(input_perdaMensal.value);
+
+        var valorLiquido = Number(input_valor_liquido.value);
+
+        //PORCENTAGEM DE PERDAS
+
+        var perdasTotais = (perdas * 100) / totalProducao; //CALCULO DE PERDAS MENSAIS EM %
+
+        var lucroSensor = (valorLiquido * (100 + (perdasTotais / 2))) / 100; //CALCULO DE LUCRO COM O SENSOR
+
+        var porcentagemLucro = (perdasTotais / 2); //CALCULO DE LUCRO ACRESCIDO COM O SENSOR EM %
+
+        lucroAtual.innerHTML = `
+        Cogumelo ${especie} </br>
+        Porcentagem de Perdas: ${perdasTotais}% </br>
+        Lucro final com o produto: ${lucroSensor.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</br>
+        Porcentagem de lucro obtido: ${porcentagemLucro}%
+        `;
+    }
+</script>
