@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    color: white;
+    width: 100%;
+    height: 60px;
+    padding: 14px 0;
+    border-bottom: 0.01px solid lightgreen;
+
+    
+}
+
+
+
+.center{
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 95%;
+    padding: 0 2%;
+    display: flex;
+   
+}
+
+
+
+.logo h1{
+    color: green;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.menu ul{
+    display: flex;
+    margin-top: 12px;
+}
+
+.menu li{
+    list-style: none;
+    margin-right: 15px;
+}
+
+.menu a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: green;
+    font-family: 'roboto';
+}
+
+.menu button{
+    background-color: green;
+    color: white;
+    padding: 4px 7px;
+    border: none;
+    cursor: pointer;
+}
+
+
+section.about{
+    padding: 50px 0;
+}
+
+section.about h2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: green;
+    font-family: 'roboto';
+    text-transform: uppercase;
+}
+
+section.about p{
+    margin: 0 200px;
+    font-size: 16px;
+}
+
+
