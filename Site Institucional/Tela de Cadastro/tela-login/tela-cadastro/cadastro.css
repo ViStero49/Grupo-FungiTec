@@ -11,7 +11,7 @@ body{
 }
 
 header{
-    width: 100%;
+    width: 100vw;
     height: 60px;
     padding: 15px 0;
     background-color: white;
@@ -32,9 +32,9 @@ header{
 .logo h1{
     color:green;
     font-size:1rem;
-    margin-top: .5rem;
     display: flex;
     align-items: center;
+    text-transform: uppercase;
     justify-content: center;
 }
 
@@ -50,7 +50,15 @@ header{
 
 .menu ul li a{
     color:green;
+    text-transform: uppercase;
     text-decoration: none;
+}
+
+.menu button{
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 6px 8px;
 }
 
 
@@ -58,7 +66,7 @@ header{
     background-image: url('./assets/img/bg-jelly-fish-para_outras_pags.png');
     padding: 100px 0;
     background-size: cover;
-     height: 95vh;
+     width: 100%;
 }
 
 .banner .container{
@@ -116,6 +124,7 @@ header{
 footer{
     background-color: #f0f2f5;
     padding: 45px 0;
+    width: 100%;
 }
 
 footer .container{
