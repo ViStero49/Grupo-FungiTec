@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&display=swap');
+body{
+    font-family: 'Barlow';
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.home{
+    background-image: url(../img/cogumelo1.jpg);
+    position: static;
+    width: 100%;
+}
+
+header{
+    padding: 2.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 100%;
+    margin-bottom: -5%;
+}
+
+
+
+#title{
+    padding: 2%;
+    color: white;
+    flex-direction: column;
+    line-height: 10px;
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(8, 206, 1);
+    transition: 0.3s all;
+}
+
+.login{
+    border: 2px solid rgb(8, 206, 1);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.login:hover{
+    background-color: rgb(14, 71, 0);
+    color: white;
+}
+
+h1{
+    font-weight: 200;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+}
+
+.parte_inferior_site{
+    padding: 6.5%;
+    max-width: 500px;
+}
+
+h2{
+    font-weight: 450;
+    font-size: 50px;
+    line-height: 120%;
+    font-family: sans-serif;
+}
+
+span{
+    color: rgb(255, 255, 255);
+}
+
+p{
+    font-family: sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+.simulador{
+    height: 14%;
+    width: 50%;
+    background-color: rgb(6, 151, 1);
+    color: white;
+    font-size: 25px;
+    border-radius: 25px;
+    transition: 0.3s all;
+    border: 0;
+}
+
+.simulador:hover{
+    cursor: pointer;
+    background-color: rgb(14, 71, 0);
+    color: white;
+}
+
+.img_home{
+    width: 500px;
+    margin-top: 10%;
+}
+
+.img_circulo{
+    width: 490px;
+    margin-top: -37%;
+}
+
+.quem_somos{
+    margin: 5%;
+}
+
+
+.quem_somos_txt{
+    margin-left: 35%;
+    text-align: center;
+    background-color: rgb(8, 206, 1);
+    border-radius: 100px;
+    padding: 45px;
+}
+
+.quem_somos_txt p{
+    text-align: center;
+    color: black;
+    font-weight: 400;
+    font-size: 200%;
+    line-height: 130%;
+}
+.quem_somos_txt h2{
+    color: black;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    height: 100px;
+    display: flex;
+    margin: 0;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+footer p{
+    margin-left: 15%;
+    padding: 20px 0;
+}
