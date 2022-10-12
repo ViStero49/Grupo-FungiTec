@@ -58,7 +58,7 @@ header {
 
 .menu ul li a {
     color: rgb(255, 255, 255);
-    font-size: 23px;
+    font-size: 15px;
     text-decoration: none;
 }
 
@@ -116,6 +116,8 @@ header {
 .form h2 {
     color: green;
     font-size: 23px;
+    margin-top: -5px;
+    margin-bottom: 10px;
 }
 
 .form label {
@@ -136,6 +138,7 @@ header {
 .form p {
     color: #fff;
     font-size: 20px;
+    margin-bottom: -10px;
 }
 
 .form .container button {
