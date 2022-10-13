@@ -22,7 +22,7 @@ function validar_campo(){
         senha.style.borderColor = '#ff0000';
 
     }else if (repetir_senha.value == null) {
-        alert('Insira sua zenha novamente');
+        alert('Insira sua senha novamente');
         Input_repetir_senha.style.borderColor = '#ff0000';
 
     }else if (_senha.value != repetir_senha.value) {
