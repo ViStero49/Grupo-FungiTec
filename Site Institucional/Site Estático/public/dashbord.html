@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/SiteInst.css">
+</head>
+
+<body>
+
+    <div class="banner_img_graficos">
+        <div class="container">
+            <div class="navebar grafico_navebar">
+                <div class="title">
+                    <img src="../img/IMG-20221004-WA0432-removebg-preview.png" alt="">
+                    <h1>FungiTec</h1>
+                </div>
+                <ul>
+                    <li><a href="./index.html">
+                            <img src="../img/img_loggof.png" alt="loggof">
+                        </a></li>
+                </ul>
+            </div>
+
+            <div class="container_dashbord">
+                <div class="container_dashbord_select">
+                    <div class="select_dash">
+
+                        <select id="select_estufa" onchange="verificar_estufa(), verificar_sensor()">
+                            <option value="">Nenhum</option>
+                            <option value="1">Estufa 1</option>
+                            <option value="">Estufa 2</option>
+                            <option value="">Estufa 3</option>
+                        </select>
+                        
+                        <select id="select_sensor" onchange="verificar_sensor()">
+                            <option value="">Nenhum</option>
+                        </select>
+                        
+                    </div>
+                    <img id="img_temperatura">
+
+                </div>
+                <div class="container_graficos_temp_umid">
+                    <div class="container_grafico">
+                        <div id="button_temperatura_umidade">
+                        </div>
+                        <div id="nome_graficos"></div>
+                        <div id="graficos"></div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <h4>Todos os direitos reservados</h4>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+
+    function verificar_estufa(){
+        var estufa = select_estufa.value;
+
+        if(estufa == 1){ 
+            select_sensor.innerHTML = `
+                            <option value="Nenhum">Nenhum</option>
+                            <option value="Quente">DHT11.1</option>
+                            <option value="Normal">DHT11.2</option>
+                            <option value="Frio">DHT11.3</option>
+                            <option value="0">DHT11.4</option>
+                        `    
+        } else{
+            select_sensor.innerHTML= `<option value="Nenhum">Nenhum</option>`
+        }
+
+    }
+
+    function verificar_sensor() {
+        var temperatura = select_sensor.value;
+
+        if (temperatura == "Quente") {
+            img_temperatura.src = "../img/quente_term.png"
+            button_temperatura_umidade.innerHTML = `
+                            <button onclick="verificar_temperatura()">Temperatura</button>
+                            <button onclick="verificar_umidade()">Umidade</button>`
+        } else if (temperatura == "Normal") {
+            img_temperatura.src = "../img/tem_normal.png"
+            button_temperatura_umidade.innerHTML = `
+                            <button onclick="verificar_temperatura()">Temperatura</button>
+                            <button onclick="verificar_umidade()">Umidade</button>`
+        } else if(temperatura == "Frio"){
+            img_temperatura.src = "../img/frio_term.png"
+            button_temperatura_umidade.innerHTML = `
+                            <button onclick="verificar_temperatura()">Temperatura</button>
+                            <button onclick="verificar_umidade()">Umidade</button>`
+        }else if(temperatura == ""){
+            button_temperatura_umidade.innerHTML = `Sensor ainda não cadastrado`
+            button_temperatura_umidade.style.color = "black"
+        } else{
+            button_temperatura_umidade.innerHTML = ''
+        }
+    }
+
+    function verificar_temperatura(){
+        nome_graficos.innerHTML = `Temperatura`
+        graficos.innerHTML = `<img src="../img/TemperaturaLinha.png">
+        <img src="../img/TemperaturaBarra.png">`
+    }
+
+    function verificar_umidade(){
+        nome_graficos.innerHTML = `Umidade`
+        graficos.innerHTML = `<img src="../img/UmidadeLinha.png">
+        <img src="../img/UmidadeBarra.png">`
+    }
+
+</script>
