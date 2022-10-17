@@ -11,7 +11,7 @@ body{
     color: #ffffff;
 }
 .banner_img{
-    background-image: url(./img/cogumelo1.jpg);
+    background-image: url(../img/cogumelo1.jpg);
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -151,7 +151,7 @@ body{
 }
 
 .img_beneficio {
-    background-image: url(./img/image18.png);
+    background-image: url(../img/image18.png);
     background-size: cover;
     height: 75vh;
     width: 100%;
@@ -233,7 +233,7 @@ footer{
 }
 
 .banner_img_graficos{
-    background-image: url(./img/cogumelo1.jpg);
+    background-image: url(../img/cogumelo1.jpg);
     height: 93vh;
     background-size: cover;
 }
