@@ -37,12 +37,15 @@ header {
 }
 
 
-.logo h1 {
+.logo{
     color: white;
-    font-size: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.logo img{
+    height: 8vh;
+    margin-right: 1vw;
 }
 
 .menu ul {

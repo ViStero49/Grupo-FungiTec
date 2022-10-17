@@ -37,15 +37,12 @@ header {
 }
 
 
-.logo{
+.logo h1 {
     color: white;
+    font-size: 30px;
     display: flex;
     align-items: center;
-}
-
-.logo img{
-    height: 8vh;
-    margin-right: 1vw;
+    justify-content: center;
 }
 
 .menu ul {
@@ -69,28 +66,6 @@ header {
     color: rgb(8, 206, 1);
     transition: 0.50;
 }
-
-.menu button {
-    background-color: green;
-    color: white;
-    margin-top: -5px;
-    border: none;
-    padding: 10px 12px;
-    border-radius: 15px;
-    border: solid 2px rgb(8, 206, 1);
-}
-
-.menu button:hover {
-    background-color: rgb(14, 71, 0);
-}
-
-.menu button a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-
-}
-
 
 .banner {
     background-image: url('./assets/img/bg-jelly-fish-para_outras_pags.png');
@@ -116,7 +91,7 @@ header {
     border-radius: 50px;
 }
 
-.form h2 {
+.form h1 {
     color: green;
     font-size: 23px;
     margin-top: -5px;
@@ -125,6 +100,17 @@ header {
 
 .form label {
     color: green;
+}
+
+.form select {
+    display: flex;
+    padding: 10px 8px;
+    margin: 20px 0;
+    flex-direction: column;
+    border-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid green;
+    outline: none;
 }
 
 .form input {
@@ -144,7 +130,7 @@ header {
     margin-bottom: -10px;
 }
 
-.form .container button {
+.container .form button {
     margin-top: 20px;
     width: 120px;
     color: #fff;
@@ -157,9 +143,14 @@ header {
 }
 
 
-.form .container button:hover {
+.container .form  button:hover {
     color: white;
     background-color: rgb(14, 71, 0);
+}
+
+.resultado {
+    color: #fff;
+    font-size: 20px;
 }
 
 
