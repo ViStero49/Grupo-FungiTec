@@ -403,3 +403,34 @@ footer{
 .container_contato_conteudo{
     width: 45vw;
 }
+
+.button_login button{
+    height: 4.5vh;
+}
+
+.button_simulador a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.input_login {
+    height: 5vh;
+    width: 12.5vw;
+}
+
+.container_nao_tem_conta{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.container_nao_tem_conta p{
+    font-size: 1em;
+}
+
+.container_nao_tem_conta a{
+    color:  rgb(6, 151, 1);
+    font-size: 1em;
+}
