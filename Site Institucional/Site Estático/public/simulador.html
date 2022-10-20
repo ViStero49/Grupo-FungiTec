@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="home">
+    <div class="banner_img_graficos">
         
             <div class="container">
                 <div class="navebar">
@@ -37,26 +37,25 @@
         <main>
             <section class="banner">
                 <div class="container">
-                    <div class="form">
-                        <br>
+                    <div>
                         <h1>Simulador Financeiro</h1><br><br>
 
                         <p>Nome da espécie:</p><select name="especie" id="select_especie">
-                            <option value="1">Selecione</option>
+                            <option value="">Nenhum</option>
                             <option value="Shimeji">Shimeji</option>
                             <option value="Shitake">Shitake</option>
                             <option value="Champignon">Champignon</option>
                         </select>
 
-                        <p>Quantidade de sacas mensal:</p><input type="text" id="input_qtd_producao_atual">
+                        <p>Quantidade de sacas mensal:</p><input type="number" id="input_qtd_sacas">
 
-                        <p>Porcentagem de perda na produção mensal:</p><input type="text" id="input_perdaMensal">
+                        <p>Porcentagem de perda na produção mensal:</p><input type="number" id="input_perda_sacas">
 
-                        <p>Valor por sacas:</p><input type="text" id="input_valor_liquido">
+                        <p>Valor por sacas:</p><input type="number" id="input_valor_sacas">
 
                         <button onclick="calcular()">Calcular</button><br><br>
 
-                        <div class="resultado" id="lucroAtual"></div>
+                        <div class="resultado" id="div_resultado"></div>
 
                     </div>
                 </div>
@@ -75,32 +74,89 @@
     function calcular() {
 
         var especie = select_especie.value;
+        var qtd_sacas = Number(input_qtd_sacas.value);
+        var perda_porcentagem = Number(input_perda_sacas.value);
+        var valor_sacas = Number(input_valor_sacas.value);
 
-        var totalProducao = Number(input_qtd_producao_atual.value);
+        var perda_antiga = qtd_sacas * perda_porcentagem * 0.01;
 
-        var perdas = Number(input_perdaMensal.value);
+        div_resultado.innerHTML = ``;
 
-        var valorLiquido = Number(input_valor_liquido.value);
-
-        //PORCENTAGEM DE PERDAS
-
-        var perdasTotais = (perdas * 100) / totalProducao; //CALCULO DE PERDAS MENSAIS EM %
-
-        var lucroSensor = (valorLiquido * (100 + (perdasTotais / 2))) / 100; //CALCULO DE LUCRO COM O SENSOR
-
-        var porcentagemLucro = (perdasTotais / 2); //CALCULO DE LUCRO ACRESCIDO COM O SENSOR EM %
-
-        if (especie == false || totalProducao <= 0 || perdas <= 0 || valorLiquido <= 0) {
-            alert('Insira os dados corretamente')
-            lucroAtual.innerHTML = ''
+        if(especie == '' || qtd_sacas == '' || perda_porcentagem == '' || valor_sacas == ''){
+            alert(`test`)
         }
-        else {
-            lucroAtual.innerHTML = `
-        Cogumelo: ${especie} </br>
-        Porcentagem de Perdas: ${perdasTotais}% </br>
-        Lucro final com o produto: ${lucroSensor} </br>
-        Porcentagem de lucro obtida: ${porcentagemLucro}%
-        `;
+        //Reduzimos 50% da perda total do Champignon
+        else if(especie == 'Champignon'){
+            var eficiencia = perda_porcentagem * 0.5;
+            var perda_nova = qtd_sacas * eficiencia * 0.01;
+            var aproveitamento = (perda_antiga - perda_nova);
+            var lucro = (valor_sacas * aproveitamento).toFixed(2)
+            div_resultado.innerHTML = `
+            <br>
+                <span>
+              A média de cogumelo produzidos por safra atualmente é de
+              ${qtd_sacas} sacas.</span> <br>
+              <span>
+              A porcentagem de perdas atual é de
+              ${perda_porcentagem.toFixed()}% e com a implantação do
+              nosso sistema tornará a ser no máximo
+              ${eficiencia.toFixed()}%
+            </span>
+              <br>
+              <span>
+              Ou seja, ${aproveitamento.toFixed()} sacas serão aproveidas,
+              rendendo um lucro de aproximadamente de R$${lucro}
+              </span>
+            `
         }
+        //Reduzimos 40% da perda  total do Shitake
+        else if(especie == 'Shitake'){
+            var eficiencia = perda_porcentagem * 0.6;
+            var perda_nova = qtd_sacas * eficiencia * 0.01;
+            var aproveitamento = (perda_antiga - perda_nova);
+            var lucro = (valor_sacas * aproveitamento).toFixed(2)
+            div_resultado.innerHTML = `
+            <br>
+                <span>
+              A média de cogumelo produzidos por safra atualmente é de
+              ${qtd_sacas} sacas.</span> <br>
+              <span>
+              A porcentagem de perdas atual é de
+              ${perda_porcentagem.toFixed()}% e com a implantação do
+              nosso sistema tornará a ser no máximo
+              ${eficiencia.toFixed()}%
+            </span>
+              <br>
+              <span>
+              Ou seja, ${aproveitamento.toFixed()} sacas serão aproveidas,
+              rendendo um lucro de aproximadamente de R$${lucro}
+              </span>
+            `
+        } 
+        //Reduzimos 30% da perda total do Shimeji
+        else{
+            var eficiencia = perda_porcentagem * 0.7;
+            var perda_nova = qtd_sacas * eficiencia * 0.01;
+            var aproveitamento = (perda_antiga - perda_nova);
+            var lucro = (valor_sacas * aproveitamento).toFixed(2)
+            div_resultado.innerHTML = `
+            <br>
+                <span>
+              A média de cogumelo produzidos por safra atualmente é de
+              ${qtd_sacas} sacas.</span> <br>
+              <span>
+              A porcentagem de perdas atual é de
+              ${perda_porcentagem.toFixed()}% e com a implantação do
+              nosso sistema tornará a ser no máximo
+              ${eficiencia.toFixed()}%
+            </span>
+              <br>
+              <span>
+              Ou seja, ${aproveitamento.toFixed()} sacas serão aproveidas,
+              rendendo um lucro de aproximadamente de R$${lucro}
+              </span>
+            `
+        }
+
     }
 </script>
