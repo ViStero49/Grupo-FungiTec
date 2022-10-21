@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/SiteInst.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -20,7 +22,8 @@
                 </div>
                 <ul style="width: 10vw;">
                     <li>
-                        <button style="height: 35px; width: 35px; background-color: #fff; border-radius: 100%; display: flex; align-items: center; justify-content: center; border-color: #F90606; border-style: solid;">
+                        <button
+                            style="height: 35px; width: 35px; background-color: #fff; border-radius: 100%; display: flex; align-items: center; justify-content: center; border-color: #F90606; border-style: solid;">
                             <img style="height: 5vh;" src="../img/NotificacaoAlerta.png" alt="">
                         </button>
                     </li>
@@ -40,13 +43,17 @@
                             <option value="">Estufa 2</option>
                             <option value="">Estufa 3</option>
                         </select>
-                        
+
                         <select id="select_sensor" onchange="verificar_sensor()">
                             <option value="">Nenhum</option>
                         </select>
-                        
+
                     </div>
-                    <img id="img_temperatura">
+                    <div class="container_tempo_atual">
+
+                        <div style="margin-right: 30px;" id="temperatura_atual"></div>
+                        <img id="img_temperatura">
+                    </div>
 
                 </div>
                 <div class="container_graficos_temp_umid">
@@ -54,8 +61,17 @@
                         <div id="button_temperatura_umidade">
                         </div>
                         <div id="nome_graficos"></div>
-                        <div id="graficos"></div>
-                        
+
+                        <div class="test">
+                            <div id="graficos_LinhaHora" class="graficos_chart">
+                            
+                            </div>
+                            <div id="graficos_LinhaMes" class="graficos_chart">
+
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
 
@@ -71,63 +87,235 @@
 
 </body>
 
+
 </html>
 
 <script>
 
-    function verificar_estufa(){
+    function verificar_estufa() {
         var estufa = select_estufa.value;
 
-        if(estufa == 1){ 
+        if (estufa == 1) {
             select_sensor.innerHTML = `
                             <option value="Nenhum">Nenhum</option>
                             <option value="Quente">DHT11.1</option>
                             <option value="Normal">DHT11.2</option>
                             <option value="Frio">DHT11.3</option>
-                            <option value="0">DHT11.4</option>
-                        `    
-        } else{
-            select_sensor.innerHTML= `<option value="Nenhum">Nenhum</option>`
+                        `
+
+                        
+        } else {
+            select_sensor.innerHTML = `<option value="Nenhum">Nenhum</option>`
         }
 
     }
 
     function verificar_sensor() {
         var temperatura = select_sensor.value;
+        graficos_LinhaHora.innerHTML = ''
+        graficos_LinhaMes.innerHTML = ''
+        nome_graficos.innerHTML = ''
+            
 
         if (temperatura == "Quente") {
+            temperatura_atual.innerHTML = `29°C`
             img_temperatura.src = "../img/quente_term.png"
             button_temperatura_umidade.innerHTML = `
-                            <button onclick="verificar_temperatura()">Temperatura</button>
+                            <button onclick="verificar_temperatura(), verificar_graficoTemp2()">Temperatura</button>
                             <button onclick="verificar_umidade()">Umidade</button>`
         } else if (temperatura == "Normal") {
+            temperatura_atual.innerHTML = `22°C`
             img_temperatura.src = "../img/tem_normal.png"
             button_temperatura_umidade.innerHTML = `
-                            <button onclick="verificar_temperatura()">Temperatura</button>
+                            <button onclick="verificar_temperatura(), verificar_grafico()">Temperatura</button>
                             <button onclick="verificar_umidade()">Umidade</button>`
-        } else if(temperatura == "Frio"){
+        } else if (temperatura == "Frio") {
             img_temperatura.src = "../img/frio_term.png"
+            temperatura_atual.innerHTML = `17°C`
             button_temperatura_umidade.innerHTML = `
-                            <button onclick="verificar_temperatura()">Temperatura</button>
+            <button onclick="verificar_temperatura(), verificar_graficoTemp1()">Temperatura</button>
                             <button onclick="verificar_umidade()">Umidade</button>`
-        }else if(temperatura == ""){
-            button_temperatura_umidade.innerHTML = `Sensor ainda não cadastrado`
-            button_temperatura_umidade.style.color = "black"
-        } else{
+        } else {
+            temperatura_atual.innerHTML = ``
+            img_temperatura.src = ''
             button_temperatura_umidade.innerHTML = ''
+            nome_graficos.innerHTML = ''
+            graficos.innerHTML = ''
+
         }
     }
 
-    function verificar_temperatura(){
-        nome_graficos.innerHTML = `Temperatura`
-        graficos.innerHTML = `<img src="../img/TemperaturaLinha.png">
-        <img src="../img/TemperaturaBarra.png">`
+    function verificar_temperatura() {
+        var temperatura = select_sensor.value;
+
+        if (temperatura == "Quente") {
+            nome_graficos.innerHTML = `Temperatura`
+
+            graficos_LinhaHora.innerHTML = `
+            <canvas id="temperatura2Linha1"></canvas>
+            `
+            graficos_LinhaMes.innerHTML = `
+            <canvas id="temperatura2Linha2"></canvas>
+            `
+        } else if (temperatura == "Normal") {
+            alert('test')
+        } else if (temperatura == "Frio") {
+
+            nome_graficos.innerHTML = `Temperatura`
+
+            graficos_LinhaHora.innerHTML = `
+            <canvas id="temperatura1Linha1"></canvas>
+            `
+            graficos_LinhaMes.innerHTML = `
+            <canvas id="temperatura1Linha2"></canvas>
+            `
+
+        } else {
+            img_temperatura.src = ''
+            button_temperatura_umidade.innerHTML = ''
+            nome_graficos.innerHTML = ''
+            graficos_Linha.innerHTML = ''
+            graficos_Barra.innerHTML = ''
+
+        }
+
     }
 
-    function verificar_umidade(){
+    function verificar_umidade() {
         nome_graficos.innerHTML = `Umidade`
         graficos.innerHTML = `<img src="../img/UmidadeLinha.png">
         <img src="../img/UmidadeBarra.png">`
+    }
+
+
+    function verificar_graficoTemp1() {
+        const labelsTemp1Li1 = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+            '18:00',
+            '19:00',
+            '20:00',
+            '21:00',
+        ];
+
+        const dataTemp1Li1 = {
+            labels: labelsTemp1Li1,
+            datasets: [{
+                label: 'Temperatura por Hora',
+                backgroundColor: 'rgb(6, 151, 1)',
+                borderColor: 'rgb(6, 151, 1)',
+                data: [21, 22, 19, 19, 17, 15, 16, 16, 18, 17],
+            }]
+        };
+
+        const configTemp1Li1 = {
+            type: 'line',
+            data: dataTemp1Li1,
+            options: {}
+        };
+        const linha1temp1 = new Chart(
+            document.getElementById('temperatura1Linha1'),
+            configTemp1Li1
+        );
+
+
+        const labelsTemp1Li2 = [
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril',
+            'Maio',
+        ];
+
+        const dataTemp1Li2 = {
+            labels: labelsTemp1Li2,
+            datasets: [{
+                label: 'Temperatura por Mês',
+                backgroundColor: 'rgb(6, 151, 1)',
+                borderColor: 'rgb(6, 151, 1)',
+                data: [21, 22, 21, 19, 16],
+            }]
+        };
+
+        const configTemp1Li2 = {
+            type: 'line',
+            data: dataTemp1Li2,
+            options: {}
+        };
+        const linha1temp2 = new Chart(
+            document.getElementById('temperatura1Linha2'),
+            configTemp1Li2
+        );
+      
+    }
+
+    function verificar_graficoTemp2(){
+
+        const labelsTemp2Li1 = [
+            '12:00',
+            '12:20',
+            '12:40',
+            '13:00',
+            '13:20',
+            '13:40',
+            '14:00',
+            '14:20',
+            '14:40',
+            '15:00',
+        ];
+    
+        const dataTemp2Li1 = {
+            labels: labelsTemp2Li1,
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'rgb(6, 151, 1)',
+                borderColor: 'rgb(6, 151, 1)',
+                data: [24, 26, 24, 25, 26, 27, 26, 28, 27, 29],
+            }]
+        };
+    
+        const configTemp2Li1 = {
+            type: 'line',
+            data: dataTemp2Li1,
+            options: {}
+        };
+        const linha2temp1 = new Chart(
+            document.getElementById('temperatura2Linha1'),
+            configTemp2Li1
+        );
+    
+    
+        const labelsTemp2Li2 = [
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril',
+            'Maio',
+        ];
+    
+        const dataTemp2Li2 = {
+            labels: labelsTemp2Li2,
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'rgb(6, 151, 1)',
+                borderColor: 'rgb(6, 151, 1)',
+                data: [25, 24, 27, 25, 29],
+            }]
+        };
+    
+        const configTemp2Li2 = {
+            type: 'line',
+            data: dataTemp2Li2,
+            options: {}
+        };
+        const linha2temp2 = new Chart(
+            document.getElementById('temperatura2Linha2'),
+            configTemp2Li2
+        );
     }
 
 </script>
