@@ -230,7 +230,7 @@ body{
 }
 
 .container_quem_somos_conteudo h3{
-    font-size: 0.9em;
+    font-size: 4vh;
 }
 
 .container_contato{
@@ -250,34 +250,20 @@ body{
     border-radius: 15px 0 0 15px;
 }
 
-.div_localizacao{
+.div_imagem_icon{
     display: flex;
     font-size: 0.8em;
     margin-left: 20vh;
 }
 
-.div_localizacao img{
+.div_imagem_icon img{
     width: 3vh;
     margin-top: 10px;
 }
 
-.div_localizacao h3{
+.div_imagem_icon h3{
     margin-top: 10px;
-}
-
-.div_email{
-    display: flex;
-    font-size: 0.8em;
-    margin-left: 20vh;
-}
-
-.div_email img{
-    width: 3vh;
-    margin-top: 10px;
-}
-
-.div_email h3{
-    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .div_redes_sociais img{
