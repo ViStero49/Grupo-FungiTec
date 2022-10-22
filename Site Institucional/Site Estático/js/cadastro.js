@@ -2,7 +2,7 @@ function validar_campo_cadastro(){
     var nome_usuario = nome.value;
     var email_usuario = email.value;
     var senha_usuario = input_senha.value;
-    var repetir_senha = input_repetir_senha.value;
+    var repetir_senha = input_repeteir_senha.value;
     var cpf = input_cpf.value;
 
 
@@ -21,11 +21,11 @@ function validar_campo_cadastro(){
         alert('Sua senha precisa ter  pelo menos oito caracteres');
         senha.style.borderColor = '#ff0000';
 
-    }else if (repetir_senha.value == null) {
+    }else if (repeteir_senha.value == null) {
         alert('Insira sua senha novamente');
         Input_repetir_senha.style.borderColor = '#ff0000';
 
-    }else if (_senha.value != repetir_senha.value) {
+    }else if (_senha.value != repeteir_senha.value) {
         alert('Os campos não coincidem');
         input_repetir_senha.style.borderColor = '#ff0000';
 
