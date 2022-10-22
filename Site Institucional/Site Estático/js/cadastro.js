@@ -1,4 +1,4 @@
-function validar_campo(){
+function validar_campo_cadastro(){
     var nome_usuario = nome.value;
     var email_usuario = email.value;
     var senha_usuario = input_senha.value;

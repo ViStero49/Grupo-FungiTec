@@ -1,4 +1,4 @@
-function validar_campo(){
+function validar_campo_login(){
     var email_usuario = email.value;
     var senha_usuario = input_senha.value;
 
@@ -15,6 +15,9 @@ function validar_campo(){
         alert('Sua senha precisa ter  pelo menos oito caracteres');
         senha.style.borderColor = '#ff0000';
 
+    }
+    else{
+        
     }
 
 };
