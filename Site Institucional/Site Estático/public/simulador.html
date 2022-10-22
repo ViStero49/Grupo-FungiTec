@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="banner_img_graficos">
+    <div class="home">
         
             <div class="container">
                 <div class="navebar">
@@ -24,7 +24,6 @@
                     <ul>
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="./simulador.html">Simulador</a></li>
-                            <li><a href="./contato.html">Contato</a></li>
         
                         <a class="login" href="./login.html">
                             <li>Login</li>
@@ -37,25 +36,26 @@
         <main>
             <section class="banner">
                 <div class="container">
-                    <div>
+                    <div class="form">
+                        <br>
                         <h1>Simulador Financeiro</h1><br><br>
 
                         <p>Nome da espécie:</p><select name="especie" id="select_especie">
-                            <option value="">Nenhum</option>
+                            <option value="1">Selecione</option>
                             <option value="Shimeji">Shimeji</option>
                             <option value="Shitake">Shitake</option>
                             <option value="Champignon">Champignon</option>
                         </select>
 
-                        <p>Quantidade de sacas mensal:</p><input type="number" id="input_qtd_sacas">
+                        <p>Quantidade de sacas mensal:</p><input type="text" id="input_qtd_producao_atual">
 
-                        <p>Porcentagem de perda na produção mensal:</p><input type="number" id="input_perda_sacas">
+                        <p>Porcentagem de perda na produção mensal:</p><input type="text" id="input_perdaMensal">
 
-                        <p>Valor por sacas:</p><input type="number" id="input_valor_sacas">
+                        <p>Valor por sacas:</p><input type="text" id="input_valor_liquido">
 
                         <button onclick="calcular()">Calcular</button><br><br>
 
-                        <div class="resultado" id="div_resultado"></div>
+                        <div class="resultado" id="lucroAtual"></div>
 
                     </div>
                 </div>

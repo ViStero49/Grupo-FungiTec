@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../css/login.css">
     <script src="../js/login.js"></script>
     <link rel="icon" href="../img/favicon_io/favicon.ico">
-    <link rel="stylesheet" href="../css/SiteInst.css">
 </head>
 
 <body>
@@ -24,7 +23,6 @@
                     <ul>
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="./simulador.html">Simulador</a></li>
-                            <li><a href="./contato.html">Contato</a></li>
                             <li><a class="login" href="./login.html">Login</a></li>
                     </ul>
                 </div>
@@ -34,7 +32,7 @@
             <section class="banner">
                 <div class="container">
                     <div class="form">
-                        <h2>Logue para entrar</h2>
+                        <h2>Bem Vindo de Volta</h2>
                         <br>
                         <div class="input-campo">
                             <p>Email:</p>
@@ -44,11 +42,11 @@
                             <label for="Senha"></label>
                             <input class="input_login" type="password" id="input_senha" placeholder="******" minlength="3" maxlength="16">
                             <div class="button_login">
-                                <button class="button_simulador" type="submit" onclick="validar_campo()">Enviar</button>
+                                <button class="button_enviar" type="submit" onclick="validar_campo_login()">Enviar</button>
                             </div>
                             <div class="container_nao_tem_conta">
-                                <p>Não tem conta?</p>
-                                <a href="./cadastro.html">Cadastre-se</a>
+                                <p class="nao_tem_conta">Não tem conta?</p>
+                                <span class="cadastre_se"><a href="./cadastro.html">Cadastre-se</a></span>
                             </div>
                         </div>
                     </div>

@@ -26,11 +26,6 @@ header {
     background-color: transparent;
 }
 
-
-
-
-
-
 .logo{
     color: white;
     display: flex;
@@ -101,13 +96,14 @@ header {
 
 .form {
     background-color: rgba(0, 0, 0, 0.25);
-    padding: 50px 100px;
+    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    width: 65vh;
     flex-direction: column;
     border-radius: 50px;
+    margin-left: 52vh;
 }
 
 .form h2 {
@@ -156,6 +152,22 @@ header {
     background-color: rgb(14, 71, 0);
 }
 
+.button_enviar{
+    background-color: rgb(6, 151, 1);
+    color: white;
+    font-size: 1.3em;
+    border-radius: 15px;
+    transition: 0.3s all;
+    border: 0;
+    width: 12.5vw;
+    margin-top: 3vh;
+}
+
+.button_enviar:hover{
+    cursor: pointer;
+    background-color: rgb(14, 71, 0);
+    color: white;
+}
 
 footer {
     background-color: #000000;
@@ -173,4 +185,8 @@ footer .container p {
     margin-top: 60px;
     font-weight: bold;
     font-size: 18px;
+}
+
+footer h4 {
+    margin-left: 70vh;
 }

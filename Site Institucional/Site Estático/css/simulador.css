@@ -26,11 +26,6 @@ header {
     background-color: transparent;
 }
 
-
-
-
-
-
 .logo {
     color: white;
     display: flex;
@@ -83,9 +78,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    width: 101vh;
     flex-direction: column;
     border-radius: 50px;
+    margin-left: 40vh;
 }
 
 .form h1 {
@@ -152,9 +148,12 @@ header {
 
 
 footer {
-    background-color: #000000;
-    padding: 10px 0;
-    width: 100%;
+    background-color: #1E1C21;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2f2f2;
 }
 
 footer .container {

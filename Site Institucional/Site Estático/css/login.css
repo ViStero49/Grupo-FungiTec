@@ -1,4 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1E1C21;
+    font-family: 'Barlow';
+    color: #ffffff;
+}
+.banner_img{
+    background-image: url(../img/cogumelo1.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.title img{
+    height: 8vh;
+    margin-right: 1vw;
+}
+
+.navebar li {
+    display: inline-block;
+}
+
+.navebar a{
+    color:white;
+    text-decoration: none;
+}
+
+.navebar a:hover{
+    color: rgb(8, 206, 1);
+    transition: 0.3s all;
+}
+
+.login{
+    border: 2px solid rgb(8, 206, 1);
+    border-radius: 10vh;
+    width: 5.1vw;
+    height: 4.9vh;
+    padding: 2.4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login a{
+    margin-top: 10px;
+}
+
+.login:hover{
+    background-color: rgba(0, 0, 0, 0.555);
+    color: white;
+}
+
+.navebar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 9vh;
+}
+
+.navebar ul{
+    width: 17vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_banner_texto{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_banner_texto h3{
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.banner_h2{
+    margin: 8vh 0;
+    font-weight: 450;
+    font-size: 2em;
+    font-family: sans-serif;
+    text-align: center;
+}
 
 * {
     font-family: 'Barlow';
@@ -103,9 +206,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    width: 68vh;
     flex-direction: column;
     border-radius: 50px;
+    margin-left: 52vh;
 }
 
 .form h2 {
@@ -136,29 +240,67 @@ header {
     margin-bottom: -10px;
 }
 
-.form .container button {
-    margin-top: 20px;
-    width: 120px;
-    color: #fff;
-    background-color: green;
-    padding: 20px 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-
 .form .container button:hover {
     color: white;
     background-color: rgb(14, 71, 0);
 }
 
+.button_enviar{
+    background-color: rgb(6, 151, 1);
+    color: white;
+    font-size: 1.3em;
+    border-radius: 15px;
+    transition: 0.3s all;
+    border: 0;
+    width: 12.5vw;
+    margin-top: 3vh;
+}
+
+.button_enviar:hover{
+    cursor: pointer;
+    background-color: rgb(14, 71, 0);
+    color: white;
+}
+
+.container_nao_tem_conta{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_nao_tem_conta .nao_tem_conta{
+    display: flex;
+    margin-left: 2vh;
+}
+
+.container_nao_tem_conta .cadastre_se{
+ display: flex;
+ margin-left: 2vh;
+ margin-top: 2vh;
+}
+.container_nao_tem_conta{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.container_nao_tem_conta p{
+    font-size: 1em;
+}
+
+.container_nao_tem_conta a{
+    color:  rgb(6, 151, 1);
+    font-size: 1em;
+}
 
 footer {
-    background-color: #000000;
-    padding: 10px 0;
-    width: 100%;
+    background-color: #1E1C21;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2f2f2;
 }
 
 footer .container {
