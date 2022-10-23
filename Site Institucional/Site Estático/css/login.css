@@ -269,12 +269,12 @@ header {
 
 .container_nao_tem_conta .nao_tem_conta{
     display: flex;
-    margin-left: 2vh;
+    margin-left: 1vh;
 }
 
 .container_nao_tem_conta .cadastre_se{
  display: flex;
- margin-left: 2vh;
+ margin-left: 1vh;
  margin-top: 2vh;
 }
 .container_nao_tem_conta{
