@@ -140,7 +140,7 @@ body{
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     height: 7vh;
-    width: 25vw;
+    width: 20vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,7 +230,7 @@ body{
 }
 
 .container_quem_somos_conteudo h3{
-    font-size: 4vh;
+    font-size: 3.6vh;
 }
 
 .container_contato{
