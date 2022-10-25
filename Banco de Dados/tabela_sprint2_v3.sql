@@ -72,9 +72,9 @@ insert into Estufa values
 (null, 'C1', 3, 3);
 
 insert into Dados_Sensor values
-(null,20.70,90,'2022-09-06 15:23',1),
-(null,24.50,75,'2022-09-06 15:23',2),
-(null,19.05,97,'2022-09-06 15:23', 3);
+(null, 20.70, 90,'2022-09-06 15:23', 1),
+(null, 24.50, 75,'2022-09-06 15:23', 2),
+(null, 19.05, 97,'2022-09-06 15:23', 3);
 
 select * from Empresa;
 select * from Funcionario;
