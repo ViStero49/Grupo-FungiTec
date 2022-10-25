@@ -41,21 +41,21 @@
                         <h1>Simulador Financeiro</h1><br><br>
 
                         <p>Nome da espécie:</p><select name="especie" id="select_especie">
-                            <option value="1">Selecione</option>
+                            <option value="">Selecione</option>
                             <option value="Shimeji">Shimeji</option>
                             <option value="Shitake">Shitake</option>
                             <option value="Champignon">Champignon</option>
                         </select>
 
-                        <p>Quantidade de sacas mensal:</p><input type="text" id="input_qtd_producao_atual">
+                        <p>Quantidade de sacas mensal:</p><input type="text" id="input_qtd_sacas">
 
-                        <p>Porcentagem de perda na produção mensal:</p><input type="text" id="input_perdaMensal">
+                        <p>Porcentagem de perda na produção mensal:</p><input type="text" id="input_perda_sacas">
 
-                        <p>Valor por sacas:</p><input type="text" id="input_valor_liquido">
+                        <p>Valor por sacas:</p><input type="text" id="input_valor_sacas">
 
                         <button onclick="calcular()">Calcular</button><br><br>
 
-                        <div class="resultado" id="lucroAtual"></div>
+                        <div id="div_resultado"></div>
 
                     </div>
                 </div>
@@ -72,7 +72,6 @@
 <script>
     
     function calcular() {
-
         var especie = select_especie.value;
         var qtd_sacas = Number(input_qtd_sacas.value);
         var perda_porcentagem = Number(input_perda_sacas.value);
