@@ -24,7 +24,7 @@ function validar_campo_cadastro() {
         input_repetir_senha.style.borderColor = 'rgb(255, 0, 0)';
         alert('Insira sua senha novamente');
 
-    } else if (input_senha.length != input_repetir_senha.length) {
+    } else if (senha_usuario.length != repetir_senha.length) {
         input_repetir_senha.style.borderColor = 'rgb(255, 0, 0)';
         alert('Os campos não coincidem');
 
