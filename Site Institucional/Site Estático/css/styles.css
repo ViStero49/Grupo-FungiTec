@@ -283,6 +283,23 @@ body{
     margin-top: -44vh;
 }
 
+.btn-chat{
+    width: 100%;
+}
+
+.btn-chat i{
+    float: right;
+    margin-right: 2rem;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.btn-chat i:hover{
+    color: rgb(6, 151, 1);
+    transition: .6s;
+}
+
 footer {
     background-color: #1E1C21;
     height: 7vh;
