@@ -7,11 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FungiTec</title>
+    <script src="../js/informatio.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../img/favicon_io/favicon.ico">
 </head>
 
 <body>
+      <div class="container-box-shadow">
+
+        </div>
     <header>
         <div class="banner_img">
             <div class="container">
@@ -83,7 +87,8 @@
                         </div>
                         <h2>Diversidade</h2>
                         <h3>Acreditamos que através da Diversidade poderemos conquistar um público abranjente e criar um
-                            ambiente de trabalho saudável onde se é possível incentivar a troca de experiências entre
+                            ambiente de trabalho saudável onde se é po<div class="container">
+                                ssível incentivar a troca de experiências entre
                             diferentes perfis profissionais.</h3>
                     </div>
                 </div>
@@ -112,7 +117,7 @@
                         <a href="#"><img src="../img/Facebook_Logo_(2019).png"></a>
                         <a href="#"><img src="../img/Instagram_icon.png.webp"></a>
                         <a href="#"><img src="../img/LinkedIn_icon_circle.svg.png"></a>
-                        <a href="#"><img src="../img/logo-twitter-circle-png-transparent-image-1.png"></a>
+                        <a href="#"><img src="../img/logo-twitter-circle-png-transparent-image-1.png"></a>document.getElementsByClassName('container').classList.add('visível');
                     </div>
                     <img src="../img/undraw_Personal_email_re_4lx7-removebg-preview.png" class="img_contato">
                 </div>
@@ -121,7 +126,7 @@
 
     </main>
     <div class="btn-chat">
-        <i class="fa-solid fa-circle-info"></i>
+        <i class="fa-solid fa-circle-info" id="button_info" onclick="modal,open()"></i>
     </div>
     <footer>
         <h4>Desenvolvido por alunos SPTech - &copy; Copyright 2022</h4>
