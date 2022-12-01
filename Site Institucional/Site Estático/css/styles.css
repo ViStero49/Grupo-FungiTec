@@ -287,21 +287,10 @@ body{
     margin-top: -44vh;
 }
 
-.btn-chat{
-    width: 100%;
-}
-
-.btn-chat i{
-    float: right;
-    margin-right: 2rem;
-    color: white;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.btn-chat i:hover{
-    color: rgb(6, 151, 1);
-    transition: .6s;
+.container_contato_conteudo i{
+    margin-left: 7.3rem;
+    margin-top: 1rem;
+    margin-right: .5rem;
 }
 
 footer {
